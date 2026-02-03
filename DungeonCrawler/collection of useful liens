@@ -1,0 +1,4 @@
+DrawBounds(_roomBounds.X, _roomBounds.Y, _roomBounds.Width, _roomBounds.Height, Color.Green); //Draws the playable room bounds
+DrawBounds((int)_slimeBounds.X, (int)_slimeBounds.Y, (int)_slimeBounds.Radius * 2, (int)_slimeBounds.Radius * 2, Color.Red);
+DrawBounds((int)_afkSlimeBounds.X, (int)_afkSlimeBounds.Y, (int)_afkSlimeBounds.Radius * 2, (int)_afkSlimeBounds.Radius * 2, Color.Blue);
+DrawBounds((int)_futureBounds.X, (int)_futureBounds.Y, (int)_futureBounds.Radius * 2, (int)_futureBounds.Radius * 2, Color.Purple);

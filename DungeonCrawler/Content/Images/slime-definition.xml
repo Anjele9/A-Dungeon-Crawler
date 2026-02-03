@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>Images/Slime1_Idle_body</Texture>
+    <Regions>
+        <Region name="slimeIdle1" x="24" y="20" width="20" height="22" />
+        <Region name="slimeIdle2" x="88" y="19" width="20" height="22" />
+        <Region name="slimeIdle3" x="151" y="18" width="20" height="22" />
+        <Region name="slimeIdle4" x="216" y="18" width="20" height="22"/>
+        <Region name="slimeIdle5" x="280" y="22" width="20" height="22"/>
+        <Region name="slimeIdle6" x="345" y="21" width="20" height="22"/>
+        <Region name="slimeUp1" x="22" y="84" width="20" height="22"/>
+        <Region name="slimeUp2" x="85" y="83" width="20" height="22"/>
+        <Region name="slimeUp3" x="149" y="82" width="20" height="22"/>
+        <Region name="slimeUp4" x="215" y="82" width="20" height="22"/>
+        <Region name="slimeUp5" x="280" y="82" width="20" height="22"/>
+        <Region name="slimeUp6" x="343" y="85" width="20" height="22"/> 
+        <Region name="slimeLeft1" x="24" y="147" width="20" height="22"/>
+        <Region name="slimeLeft2" x="88" y="146" width="20" height="22"/>
+        <Region name="slimeLeft3" x="151" y="145" width="20" height="22"/>
+        <Region name="slimeLeft4" x="216" y="145" width="20" height="22"/>
+        <Region name="slimeLeft5" x="280" y="150" width="20" height="22"/>
+        <Region name="slimeLeft6" x="345" y="149" width="20" height="22"/>
+        <Region name="slimeRight1" x="23" y="211" width="20" height="22"/>
+        <Region name="slimeRight2" x="86" y="210" width="20" height="22"/>
+        <Region name="slimeRight3" x="149" y="209" width="20" height="22"/>
+        <Region name="slimeRight4" x="215" y="209" width="20" height="22"/>
+        <Region name="slimeRight5" x="280" y="214" width="20" height="22"/>
+        <Region name="slimeRight6" x="343" y="213" width="20" height="22"/>
+    </Regions>
+    <Animations>
+        <Animation name="slime-animation" delay="200">
+            <Frame region="slimeIdle1"/>
+            <Frame region="slimeIdle2"/>
+            <Frame region="slimeIdle3"/>
+            <Frame region="slimeIdle4"/>
+            <Frame region="slimeIdle5"/>
+            <Frame region="slimeIdle6"/>
+        </Animation>
+    <Animation name="slime-animation-up" delay="200">
+            <Frame region="slimeUp1"/>
+            <Frame region="slimeUp2"/>
+            <Frame region="slimeUp3"/>
+            <Frame region="slimeUp4"/>
+            <Frame region="slimeUp5"/>
+            <Frame region="slimeUp6"/>
+        </Animation>
+    <Animation name="slime-animation-left" delay="200">
+            <Frame region="slimeLeft1"/>
+            <Frame region="slimeLeft2"/>
+            <Frame region="slimeLeft3"/>
+            <Frame region="slimeLeft4"/>
+            <Frame region="slimeLeft5"/>
+            <Frame region="slimeLeft6"/>
+        </Animation>
+    <Animation name="slime-animation-right" delay="200">
+            <Frame region="slimeRight1"/>
+            <Frame region="slimeRight2"/>
+            <Frame region="slimeRight3"/>
+            <Frame region="slimeRight4"/>
+            <Frame region="slimeRight5"/>
+            <Frame region="slimeRight6"/>
+        </Animation>
+    </Animations>
+</TextureAtlas>
