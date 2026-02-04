@@ -9,5 +9,6 @@ public class NPC : Actor{
         this.Position = Position;
         this.Speed = Speed;
         IsCollidable = true;
+        isPassable = false; // NPCs block movement
     }
 }

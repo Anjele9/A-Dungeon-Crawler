@@ -6,6 +6,7 @@ public class Game1 : Core
 
     NPC afkSlime;
     Player player;
+    List<Entity> entities = new List<Entity>();
 
     Vector2 _afkSlimePosition = new Vector2(256, 256);
     private Tilemap _tilemap;
@@ -40,8 +41,11 @@ public class Game1 : Core
         _slime = DirectionalSpriteFactory.Create(slimeConfig, atlas);
         _tilemap = Tilemap.FromFile(Content, "Images/Map1.xml");
         _tilemap.Scale = new Vector2(4.0f, 4.0f);
-        player = new Player(DirectionalSpriteFactory.Create(slimeConfig, atlas), new Circle(0, 0, (int)(_slime.Width * 0.5f)), Vector2.Zero, 3f);
+        player = new Player(DirectionalSpriteFactory.Create(slimeConfig, atlas), new Circle(128, 128, (int)(_slime.Width * 0.5f)), new Vector2(128, 128), 3f);
         afkSlime = new NPC(DirectionalSpriteFactory.Create(slimeConfig, atlas), new Circle(256, 256, (int)(_slime.Width * 0.5f)), _afkSlimePosition, 0f);
+        
+        entities.Add(player);
+        entities.Add(afkSlime);
     }
     protected override void Update(GameTime gameTime)
     {
@@ -68,8 +72,8 @@ public class Game1 : Core
         _tilemap.Draw(SpriteBatch);
         player.Draw(SpriteBatch);
         afkSlime.Draw(SpriteBatch);
-        DrawBounds(player.Bounds.X, player.Bounds.Y, (int)player.Sprite.Width, (int)player.Sprite.Height, Color.Red);
-        DrawBounds((int)afkSlime.Position.X, (int)afkSlime.Position.Y, (int)afkSlime.Sprite.Width, (int)afkSlime.Sprite.Height, Color.Blue);
+        player.DrawBounds(SpriteBatch, pixel, Color.Red);
+        afkSlime.DrawBounds(SpriteBatch, pixel, Color.Blue);
         SpriteBatch.End();
         base.Draw(gameTime);
     }
@@ -83,16 +87,6 @@ public class Game1 : Core
         if (gamePaused)
             return;
         bool Sprint = Input.Keyboard.isKeyDown(Keys.LeftShift);
-        if (Input.Keyboard.anyKeyDown()) player.MoveInput(Input.Keyboard.currentState, Sprint);
-    }
-    private void DrawBounds(int X, int Y, int Width, int Height, Color color)
-    {
-        Rectangle bounds = new Rectangle(
-            X,
-            Y,
-            Width,
-            Height
-        );
-        SpriteBatch.Draw(pixel, bounds, color * 0.5f);
+        if (Input.Keyboard.anyKeyDown()) player.MoveInput(Input.Keyboard.currentState, Sprint, entities, _roomBounds);
     }
 }

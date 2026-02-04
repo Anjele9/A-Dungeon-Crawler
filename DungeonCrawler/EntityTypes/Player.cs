@@ -10,7 +10,7 @@ public class Player : Actor
         this.Position = Position;
         this.Speed = Speed;
     }
-    public void MoveInput(KeyboardState keyboard, bool Run)
+    public void MoveInput(KeyboardState keyboard, bool Run, List<Entity> entities, Rectangle roomBounds)
     {
         float movespeed = Run ? 2f * Speed : Speed;
         float dx = 0f;
@@ -23,7 +23,7 @@ public class Player : Actor
         {
             Vector2 movement = new Vector2(dx, dy);
             movement.Normalize();
-            Move(movement * movespeed);
+            Move(movement * movespeed, entities, roomBounds);
         }
         if (dx == 0 && dy == 0) ChangeDirection(Direction.Idle);
         else if (dx > 0) ChangeDirection(Direction.Right);
