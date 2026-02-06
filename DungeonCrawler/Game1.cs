@@ -7,6 +7,7 @@ public class Game1 : Core
     NPC afkSlime;
     Player player;
     List<Entity> entities = new List<Entity>();
+    PauseButton pauseButton;
 
     Vector2 _afkSlimePosition = new Vector2(256, 256);
     private Tilemap _tilemap;
@@ -46,6 +47,7 @@ public class Game1 : Core
         
         entities.Add(player);
         entities.Add(afkSlime);
+        
     }
     protected override void Update(GameTime gameTime)
     {
@@ -75,6 +77,7 @@ public class Game1 : Core
         player.DrawBounds(SpriteBatch, pixel, Color.Red);
         afkSlime.DrawBounds(SpriteBatch, pixel, Color.Blue);
         SpriteBatch.End();
+        
         base.Draw(gameTime);
     }
     private void CheckKeyboardInput()

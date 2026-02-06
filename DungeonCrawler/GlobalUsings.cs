@@ -7,4 +7,5 @@ global using MonoGameLibrary;
 global using MonoGameLibrary.Graphics;
 global using DungeonCrawler.EntityTypes;
 global using MonoGameLibrary.Input;
+global using DungeonCrawler.Widgets;
 global using Microsoft.Xna.Framework.Content;
